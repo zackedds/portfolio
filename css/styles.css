@@ -11747,3 +11747,8 @@ html {
   height: auto; /* Maintains the aspect ratio of the image */
   border-radius: 20px; /* Match the container's border-radius */
 }
+
+.inline-gif {
+  height: 1em; /* Adjust the height to match the line height of your text */
+  vertical-align: middle; /* Aligns the GIF with the middle of the text */
+}
