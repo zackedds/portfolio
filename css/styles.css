@@ -11696,7 +11696,33 @@ html {
   .fw-bolder {
       font-size: 16px; /* Adjust font size for better readability on mobile */
   }
+
+
+  .bg-light.p-3 {
+    padding: 8px; /* Reduced padding inside the inner boxes */
+  }
+
+  .row-cols-1.row-cols-md-3 .col {
+      margin-bottom: 10px; /* Reduce spacing between columns */
+  }
+
+  .d-flex.align-items-center.mb-4 {
+      margin-bottom: 10px; /* Reduce spacing between the feature icons and headings */
+  }
+
+  .mb-5, .mb-4, .mb-md-0 {
+      margin-bottom: 10px !important; /* Reduce margin between the sections */
+  }
 }
+
+
+@media (max-width: 768px) {
+  .btn.btn-primary {
+      padding: 8px 16px; /* Adjust the padding for mobile */
+      font-size: 14px; /* Optionally reduce the font size for better fit */
+  }
+}
+
 
 .inline-gif {
   height: 1em; /* Adjust the height to match the line height of your text */
