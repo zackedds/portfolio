@@ -11649,6 +11649,55 @@ html {
 }
 
 
+@media (max-width: 768px) {
+  .card-body {
+      padding: 15px; /* Reduce padding for mobile */
+  }
+
+  .bg-light.p-3 {
+      padding: 10px; /* Reduce padding inside the inner box */
+  }
+
+  .experience-description {
+      padding: 10px;
+      font-size: 14px; /* Slightly smaller font for better fit on mobile */
+  }
+
+  .education-description {
+    padding: 10px;
+    font-size: 14px; /* Maintain smaller font for better fit on mobile */
+}
+
+  .col-lg-4, .col-md-5 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .col-lg-8, .col-md-7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .row.align-items-center {
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .col-12 {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .card {
+      margin-bottom: 20px;
+  }
+
+  .fw-bolder {
+      font-size: 16px; /* Adjust font size for better readability on mobile */
+  }
+}
+
 .inline-gif {
   height: 1em; /* Adjust the height to match the line height of your text */
   vertical-align: middle; /* Aligns the GIF with the middle of the text */
