@@ -11733,40 +11733,43 @@ html {
   vertical-align: middle; /* Aligns the GIF with the middle of the text */
 }
 
-
-
+/* General Styling for Awards Section */
 .awards-section .awards-title {
-  background: linear-gradient(45deg, rgb(130, 51, 173), rgb(180, 101, 223)); /* Custom gradient with your color */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: rgb(130, 51, 173); /* Custom color for the section title */
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
 }
 
 .awards-section .award-title {
-  color: rgb(130, 51, 173); /* Custom color for the award title */
+  color: rgb(130, 51, 173); /* Custom color for the award titles */
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
 }
 
 .awards-section .card-body {
-  padding: 1.5rem;
+  padding: 1.5rem; /* Standard padding for the card body */
 }
 
 .awards-section .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #f8f9fa !important; /* Light background for inner boxes */
+  padding: 1.25rem; /* Inner box padding */
+  border-radius: 15px; /* Rounded corners */
 }
 
 .awards-section .card {
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Rounded corners for cards */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+  margin-bottom: 1.5rem; /* Space between cards */
 }
 
 .awards-section .fw-bolder {
-  font-weight: bolder;
+  font-weight: bolder; /* Bold text */
 }
 
 .awards-section .small {
-  font-size: 0.875rem;
-  color: #6c757d;
+  font-size: 0.875rem; /* Small text for details */
+  color: #6c757d; /* Muted color for small text */
 }
-
 
 .awards-section .awards-card {
   margin-left: auto;
@@ -11775,6 +11778,7 @@ html {
   width: 100%;
 }
 
+/* Mobile Styling Adjustments */
 @media (max-width: 768px) {
   .awards-section .container {
       padding-left: 1rem;
@@ -11789,10 +11793,19 @@ html {
   }
 
   .awards-section .card-body {
-      padding: 1.25rem;
+      padding: 1.25rem; /* Slightly reduced padding for mobile */
   }
 
   .awards-section .bg-light {
-      padding: 1rem;
+      padding: 1rem; /* Reduced padding inside inner boxes on mobile */
+  }
+
+  .awards-section .awards-title {
+      font-size: 1.75rem; /* Adjust title size for mobile */
+      text-align: center; /* Ensure the section title is centered */
+  }
+
+  .awards-section .award-title {
+      font-size: 1.25rem; /* Adjust award title size for mobile */
   }
 }
