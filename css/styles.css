@@ -11830,3 +11830,7 @@ html {
 .fixed-size {
   font-size: 2.5rem; /* Set the desired fixed font size */
 }
+
+.large-text {
+  font-size: 1.3rem; /* Increase the font size for this specific element */
+}
