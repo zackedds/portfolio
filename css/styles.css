@@ -11866,3 +11866,26 @@ html {
       font-size: 1.25rem; /* Larger button text size */
   }
 }
+
+@media (max-width: 768px) {
+  #carouselExampleIndicators img {
+      height: 250px; /* Adjust height for smaller screens */
+  }
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner img {
+  aspect-ratio: 16 / 9; /* Set aspect ratio, e.g., 16:9 */
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner img {
+      aspect-ratio: 4 / 3; /* Adjust aspect ratio for smaller screens */
+  }
+}
