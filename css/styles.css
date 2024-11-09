@@ -11889,3 +11889,9 @@ html {
       aspect-ratio: 4 / 3; /* Adjust aspect ratio for smaller screens */
   }
 }
+
+@media (max-width: 768px) {
+  section.py-5.bg-gradient-primary-to-secondary {
+      max-width: 90%; /* For smaller screens, use a percentage-based width */
+  }
+}
