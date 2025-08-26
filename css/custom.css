@@ -1,0 +1,345 @@
+/* Custom theme overrides and project-specific styles */
+
+body,
+html {
+  height: 100%;
+}
+
+.bg-gradient-primary-to-secondary {
+  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+.feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+}
+
+.profile {
+  position: relative;
+  height: 75vw;
+  width: 75vw;
+  border-radius: 5vw;
+  margin-top: 5vw;
+  max-height: 40rem;
+  max-width: 40rem;
+}
+.profile .profile-img {
+  height: 80vw;
+  max-height: 45rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 576px) {
+  .profile {
+    height: 60vw;
+    width: 60vw;
+  }
+  .profile .profile-img {
+    height: 65vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile {
+    height: 50vw;
+    width: 50vw;
+  }
+  .profile .profile-img {
+    height: 55vw;
+  }
+}
+@media (min-width: 992px) {
+  .profile {
+    height: 40vw;
+    width: 40vw;
+  }
+  .profile .profile-img {
+    height: 45vw;
+  }
+}
+@media (min-width: 1200px) {
+  .profile {
+    height: 35vw;
+    width: 35vw;
+  }
+  .profile .profile-img {
+    height: 40vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-body {
+      padding: 15px;
+  }
+
+  .bg-light.p-3 {
+      padding: 10px;
+  }
+
+  .experience-description {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .education-description {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .col-lg-4, .col-md-5 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .col-lg-8, .col-md-7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .row.align-items-center {
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .col-12 {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .card {
+      margin-bottom: 20px;
+  }
+
+  .fw-bolder {
+      font-size: 16px;
+  }
+
+  .display-3 {
+      font-size: 3rem;
+      font-weight: 700;
+  }
+
+  .bg-light.p-3 {
+    padding: 8px;
+  }
+
+  .row-cols-1.row-cols-md-3 .col {
+      margin-bottom: 10px;
+  }
+
+  .d-flex.align-items-center.mb-4 {
+      margin-bottom: 10px;
+  }
+
+  .mb-5, .mb-4, .mb-md-0 {
+      margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn.btn-primary {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+}
+
+.inline-gif {
+  height: 1em;
+  vertical-align: middle;
+}
+
+/* Awards Section */
+.awards-section .awards-title {
+  color: rgb(130, 51, 173);
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.awards-section .award-title {
+  color: rgb(130, 51, 173);
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+
+.awards-section .card-body {
+  padding: 1.5rem;
+}
+
+.awards-section .bg-light {
+  background-color: #f8f9fa !important;
+  padding: 1.25rem;
+  border-radius: 15px;
+}
+
+.awards-section .card {
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.awards-section .fw-bolder {
+  font-weight: bolder;
+}
+
+.awards-section .small {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.awards-section .awards-card {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .awards-section .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .awards-section .awards-card {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      width: 100%;
+  }
+
+  .awards-section .card-body {
+      padding: 1.25rem;
+  }
+
+  .awards-section .bg-light {
+      padding: 1rem;
+  }
+
+  .awards-section .awards-title {
+      font-size: 1.75rem;
+      text-align: center;
+  }
+
+  .awards-section .award-title {
+      font-size: 1.25rem;
+  }
+}
+
+.d-flex.align-items-center.bg-light {
+  color: #000000;
+}
+
+.intro-text {
+  color: #000000;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.intro-description {
+  color: #000000;
+  font-size: 1.1rem;
+}
+
+.fixed-size {
+  font-size: 2.5rem;
+}
+
+.large-text {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .bg-gradient-primary-to-secondary {
+      padding: 2rem 1rem;
+  }
+  .bg-gradient-primary-to-secondary .container {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+  .bg-gradient-primary-to-secondary h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+  }
+  .bg-gradient-primary-to-secondary .btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .bg-gradient-primary-to-secondary {
+      padding: 3rem 2rem;
+  }
+  .bg-gradient-primary-to-secondary h2 {
+      font-size: 2.5rem;
+  }
+  .bg-gradient-primary-to-secondary .btn {
+      padding: 1.25rem 3rem;
+      font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #carouselExampleIndicators img {
+      height: 250px;
+  }
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner img {
+      aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 768px) {
+  section.py-5.bg-gradient-primary-to-secondary {
+      max-width: 90%;
+  }
+}
+
+/* Custom images */
+.img-fluid {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.img-project {
+  max-width: 300px;
+  height: auto;
+} 
