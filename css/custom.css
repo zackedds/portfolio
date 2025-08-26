@@ -11,6 +11,16 @@
   --bs-code-color: #e21e80;
 }
 
+/* Normalize list spacing within project/resume cards */
+.experience-description {
+  padding-left: 1rem;
+}
+.experience-description li {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 1rem;
+}
+
 /* Buttons - match original styles */
 .btn-primary {
   --bs-btn-color: #fff;
