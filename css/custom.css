@@ -214,7 +214,7 @@ html {
 
 @media (max-width: 768px) {
   .card-body {
-      padding: 15px;
+      padding: 12px;
   }
 
   .bg-light.p-3 {
@@ -253,7 +253,7 @@ html {
   }
 
   .card {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
   }
 
   .fw-bolder {
@@ -478,5 +478,196 @@ html {
   }
   .navbar-nav .nav-link {
     font-size: 1.1rem;
+  }
+} 
+
+/* ===== About Page Components ===== */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(30, 48, 243, 0.08);
+  color: #000;
+  font-weight: 600;
+  border: 1px solid rgba(30, 48, 243, 0.15);
+}
+
+/* Horizontal photo strip */
+.photo-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 220px;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.photo-strip::-webkit-scrollbar {
+  height: 6px;
+}
+.photo-strip::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 6px;
+}
+.strip-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.strip-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Drag scroll helper */
+.drag-scroll {
+  cursor: grab;
+}
+.drag-scroll:active {
+  cursor: grabbing;
+}
+
+/* Polaroid cards */
+.polaroid {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 12px 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.polaroid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.polaroid .caption {
+  text-align: center;
+  margin: 10px 0 0;
+  font-weight: 700;
+  color: #111;
+}
+.polaroid:hover {
+  transform: translateY(-6px) rotate(-0.25deg);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.18);
+}
+.rotate-r { transform: rotate(1.5deg); }
+.rotate-l { transform: rotate(-1.5deg); }
+
+/* Masonry gallery */
+.masonry {
+  column-count: 1;
+  column-gap: 16px;
+}
+.masonry-item {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.masonry-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+@media (min-width: 576px) { .masonry { column-count: 2; } }
+@media (min-width: 992px) { .masonry { column-count: 3; } }
+
+/* Lightbox */
+.lightbox.hidden { display: none; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  padding: 20px;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.lightbox-close i { font-size: 1.1rem; } 
+
+@media (max-width: 768px) {
+  /* Flatten experience bullets to em-dash lines and remove indentation */
+  .experience-description {
+      padding-left: 0;
+      margin-left: 0;
+      font-size: 14px;
+  }
+  .experience-description li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+      position: relative;
+  }
+  .experience-description li::before {
+      content: "— ";
+      color: #000;
+      position: static;
+      margin-right: 4px;
+  }
+
+  /* Tighten card container spacing on mobile */
+  .col-lg-11.col-xl-9.col-xxl-8,
+  .container.px-5.my-5 {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+  }
+} 
+
+/* Mobile padding restore to prevent edge-to-edge content */
+@media (max-width: 768px) {
+  .container {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+  }
+  .col-12 {
+      padding-left: 12px;
+      padding-right: 12px;
+  }
+} 
+
+/* Robust mobile gutters: never allow zero padding at narrow widths */
+@media (max-width: 768px) {
+  /* Ensure container keeps a base padding */
+  .container, .container-fluid {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+  }
+  /* Set smaller but nonzero gutters on rows */
+  .row {
+      --bs-gutter-x: 1rem; /* ~16px total (8px each side) */
+  }
+  /* Enforce column padding using gutter variable, overriding earlier zero rules */
+  .row > * {
+      padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+      padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
   }
 } 
