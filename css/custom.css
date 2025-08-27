@@ -214,7 +214,7 @@ html {
 
 @media (max-width: 768px) {
   .card-body {
-      padding: 15px;
+      padding: 12px;
   }
 
   .bg-light.p-3 {
@@ -253,7 +253,7 @@ html {
   }
 
   .card {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
   }
 
   .fw-bolder {
@@ -613,3 +613,61 @@ html {
   cursor: pointer;
 }
 .lightbox-close i { font-size: 1.1rem; } 
+
+@media (max-width: 768px) {
+  /* Flatten experience bullets to em-dash lines and remove indentation */
+  .experience-description {
+      padding-left: 0;
+      margin-left: 0;
+      font-size: 14px;
+  }
+  .experience-description li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+      position: relative;
+  }
+  .experience-description li::before {
+      content: "— ";
+      color: #000;
+      position: static;
+      margin-right: 4px;
+  }
+
+  /* Tighten card container spacing on mobile */
+  .col-lg-11.col-xl-9.col-xxl-8,
+  .container.px-5.my-5 {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+  }
+} 
+
+/* Mobile padding restore to prevent edge-to-edge content */
+@media (max-width: 768px) {
+  .container {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+  }
+  .col-12 {
+      padding-left: 12px;
+      padding-right: 12px;
+  }
+} 
+
+/* Robust mobile gutters: never allow zero padding at narrow widths */
+@media (max-width: 768px) {
+  /* Ensure container keeps a base padding */
+  .container, .container-fluid {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+  }
+  /* Set smaller but nonzero gutters on rows */
+  .row {
+      --bs-gutter-x: 1rem; /* ~16px total (8px each side) */
+  }
+  /* Enforce column padding using gutter variable, overriding earlier zero rules */
+  .row > * {
+      padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+      padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+  }
+} 
