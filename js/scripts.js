@@ -79,3 +79,79 @@
   if (!nodes || nodes.length === 0) return;
   nodes.forEach(function(node) { node.textContent = year; });
 })();
+
+// ===== About page enhancements =====
+(function() {
+  if (typeof window === 'undefined') return;
+
+  // Lightbox for any .lightboxable
+  var overlay = document.getElementById('lightboxOverlay');
+  if (overlay) {
+    var overlayImg = overlay.querySelector('.lightbox-img');
+    function openLightbox(src, alt) {
+      overlayImg.src = src;
+      overlayImg.alt = alt || '';
+      overlay.classList.remove('hidden');
+    }
+    function closeLightbox() {
+      overlay.classList.add('hidden');
+      // Defer src cleanup so CSS transition (if any) can run
+      setTimeout(function() { overlayImg.src = ''; }, 150);
+    }
+
+    document.addEventListener('click', function(e) {
+      var img = e.target.closest('.lightboxable');
+      if (img) {
+        openLightbox(img.src, img.alt);
+      }
+      if (e.target.closest('.lightbox-close')) {
+        closeLightbox();
+      }
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Drag-to-scroll for .drag-scroll containers
+  var draggable = document.querySelectorAll('.drag-scroll');
+  draggable.forEach(function(container) {
+    var isDown = false;
+    var startX = 0;
+    var scrollLeft = 0;
+
+    container.addEventListener('mousedown', function(e) {
+      isDown = true;
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+    container.addEventListener('mouseleave', function() { isDown = false; });
+    container.addEventListener('mouseup', function() { isDown = false; });
+    container.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - container.offsetLeft;
+      var walk = (x - startX) * 1.2; // scroll-fast factor
+      container.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch support
+    var startTouchX = 0;
+    container.addEventListener('touchstart', function(e) {
+      if (!e.touches || e.touches.length === 0) return;
+      startTouchX = e.touches[0].clientX;
+      scrollLeft = container.scrollLeft;
+    }, { passive: true });
+    container.addEventListener('touchmove', function(e) {
+      if (!e.touches || e.touches.length === 0) return;
+      var diff = e.touches[0].clientX - startTouchX;
+      container.scrollLeft = scrollLeft - diff;
+    }, { passive: true });
+  });
+})();
