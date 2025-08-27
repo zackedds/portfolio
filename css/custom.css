@@ -464,3 +464,19 @@ html {
   max-width: 300px;
   height: auto;
 } 
+
+/* Navbar sizing */
+.navbar-brand {
+  font-size: 1.5rem; /* default 1.25rem → 1.5rem */
+}
+.navbar-nav .nav-link {
+  font-size: 1.05rem; /* slightly larger nav links */
+}
+@media (min-width: 992px) {
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+} 
