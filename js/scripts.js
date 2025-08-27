@@ -24,9 +24,23 @@
         obs.unobserve(entry.target);
       }
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  }, { rootMargin: '20% 0px -5% 0px', threshold: 0.05 });
 
   revealEls.forEach(function(el) { observer.observe(el); });
+
+  // Safety: ensure near-fold items don't look like the page ends
+  // After a short delay, pre-reveal items that are within 1 viewport height below
+  window.setTimeout(function() {
+    revealEls.forEach(function(el) {
+      if (!el.classList.contains('revealed')) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 1.2) {
+          el.classList.add('revealed');
+          observer.unobserve(el);
+        }
+      }
+    });
+  }, 400);
 })();
 
 // Enable Bootstrap carousel autoplay with pause on hover and reduced-motion support
