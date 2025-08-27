@@ -56,3 +56,12 @@
     // Bootstrap may not be loaded yet; ignore
   }
 })();
+
+// Set dynamic current year in footer
+(function() {
+  if (typeof window === 'undefined') return;
+  var year = String(new Date().getFullYear());
+  var nodes = document.querySelectorAll('.js-current-year');
+  if (!nodes || nodes.length === 0) return;
+  nodes.forEach(function(node) { node.textContent = year; });
+})();
