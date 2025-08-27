@@ -128,6 +128,12 @@ html {
 .bg-gradient-primary-to-secondary {
   background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
   border-radius: 20px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .text-gradient {
