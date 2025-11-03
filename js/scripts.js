@@ -52,19 +52,32 @@
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return; // don't auto-play
 
-  // Bootstrap 5: use data attributes or instantiate via JS
-  carouselEl.setAttribute('data-bs-ride', 'carousel');
-  carouselEl.setAttribute('data-bs-interval', '3500');
-  carouselEl.setAttribute('data-bs-pause', 'hover');
-
   try {
+    // Start with longer interval for first slide (7 seconds)
     var carousel = new bootstrap.Carousel(carouselEl, {
-      interval: 3500,
+      interval: 7000, // Double duration for first slide
       ride: 'carousel',
       pause: 'hover',
       touch: true,
       keyboard: true,
       wrap: true
+    });
+
+    // After first slide transition, reduce interval to normal 3.5s
+    var firstSlide = true;
+    carouselEl.addEventListener('slid.bs.carousel', function() {
+      if (firstSlide) {
+        firstSlide = false;
+        carousel.dispose();
+        carousel = new bootstrap.Carousel(carouselEl, {
+          interval: 3500, // Normal interval for subsequent slides
+          ride: 'carousel',
+          pause: 'hover',
+          touch: true,
+          keyboard: true,
+          wrap: true
+        });
+      }
     });
   } catch (e) {
     // Bootstrap may not be loaded yet; ignore
