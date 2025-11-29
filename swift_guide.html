@@ -44,13 +44,13 @@
                             <i class="bi bi-arrow-left me-2"></i>Back to Swift Algorithms
                         </a>
                         <h1 class="display-3 fw-bolder mb-3"><span class="text-gradient d-inline">Crash Course to Swift for LeetCode</span></h1>
-                        <p class="lead text-muted">Already know algorithmic problem solving for another language? Here is what you need to jump start your journey with swift interview coding.</p>
+                        <p class="lead text-muted mb-4">Already know algorithmic problem solving for another language? Here is what you need to jump start your journey with swift interview coding.</p>
                     </div>
                 </div>
             </header>
 
             <!-- Page Content-->
-            <div class="container px-5 my-5">
+            <div class="container px-5 mb-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
                         <div class="card shadow border-0 rounded-4 reveal">
@@ -106,24 +106,26 @@ stack.insert(10, at: 0)
 stack.removeFirst()</code></pre>
                                     </div>
 
-                                    <!-- Section 4: Strings as Character Arrays -->
+                                    <!-- Section 4: Strings -->
                                     <div class="mb-5">
-                                        <h3 class="h4 fw-bolder text-primary mb-3">4. Strings as Character Arrays</h3>
-                                        <p class="text-muted mb-3"><em>Why it matters: Swift Strings are not randomly accessible integers. You cannot do str[0]. You must convert them to Arrays for pointer manipulation.</em></p>
+                                        <h3 class="h4 fw-bolder text-primary mb-3">4. Strings</h3>
+                                        <p class="text-muted mb-3"><em>Why it matters: Swift Strings enforce Unicode correctness, so integer indexing (str[0]) is forbidden. You must convert to an Array for random access or use Substring methods.</em></p>
                                         <pre class="bg-light p-3 rounded"><code>let str = "Swift"
 
-// ❌ Bad (Won't compile or is hard to traverse)
-// let char = str[0]
+// 1. Efficient Slicing (Returns Substring)
+let start = str.prefix(3) // "Swi"
+let end = str.suffix(2)   // "ft"
 
-// ✅ Good (O(n) upfront cost, but O(1) access afterwards)
-let charArray = Array(str)
-print(charArray[0]) // "S"</code></pre>
+// 2. Array Conversion (The LeetCode Standard)
+// Required for O(1) access patterns (like Two Pointers)
+let chars = Array(str)
+// now you can do: chars[0]</code></pre>
                                     </div>
 
                                     <!-- Section 5: Functional Shorthand -->
                                     <div class="mb-5">
                                         <h3 class="h4 fw-bolder text-primary mb-3">5. Functional Shorthand</h3>
-                                        <p class="text-muted mb-3"><em>Why it matters: Shows language mastery and keeps code clean during whiteboard interviews.</em></p>
+                                        <p class="text-muted mb-3"><em>Why it matters: Shows language mastery and keeps code clean during interviews.</em></p>
                                         <pre class="bg-light p-3 rounded"><code>let nums = [1, 2, 3, 4, 5]
 
 // Map: Transform
