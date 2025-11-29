@@ -3,8 +3,8 @@
 
   function gradient(ctx, x0, y0, x1, y1) {
     var g = ctx.createLinearGradient(x0, y0, x1, y1);
-    g.addColorStop(0, '#1e30f3');
-    g.addColorStop(1, '#e21e80');
+    g.addColorStop(0, '#8B5CF6');
+    g.addColorStop(1, '#1e40af');
     return g;
   }
 

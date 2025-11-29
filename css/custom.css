@@ -126,7 +126,7 @@ html {
 
 /* Gradient utility - do not impose size or layout */
 .bg-gradient-primary-to-secondary {
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(135deg, #8B5CF6 0%, #1e40af 100%);
   border-radius: 20px;
   width: 400px;
   height: 400px;
@@ -137,7 +137,7 @@ html {
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  background: -webkit-linear-gradient(315deg, #8B5CF6 0%, #1e40af 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -154,6 +154,20 @@ html {
   height: 3rem;
   width: 3rem;
   font-size: 1.5rem;
+}
+
+/* Icon box with gradient - fixed square size */
+.icon-box-gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #8B5CF6 0%, #1e40af 100%);
+  border-radius: 0.75rem;
+  color: white;
+  flex-shrink: 0;
 }
 
 .profile {
@@ -688,7 +702,7 @@ html {
   position: absolute;
   inset: -16px;
   border-radius: 30px;
-  background: linear-gradient(135deg, rgba(30,48,243,0.35), rgba(226,30,128,0.35));
+  background: linear-gradient(135deg, rgba(139,92,246,0.35), rgba(30,64,175,0.35));
   filter: blur(28px);
   z-index: -1;
 }
