@@ -19,6 +19,22 @@
         <link href="css/custom.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <style>
+            a .swift-notebook-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(30, 48, 243, 0.2) !important;
+            }
+            a .swift-notebook-card:hover .bi-arrow-right-circle {
+                transform: translateX(4px);
+            }
+            a .youtube-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(30, 48, 243, 0.2) !important;
+            }
+            a .youtube-card:hover .bi-play-circle {
+                transform: scale(1.1);
+            }
+        </style>
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
@@ -52,87 +68,126 @@
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
                         <!-- Project Section-->
                         <section>
+                            <!-- Project Card: Swift Study -->
+                            <a href="leetcode.html" class="text-decoration-none" style="display: block;">
+                                <div class="card shadow border-0 rounded-4 mb-5 reveal swift-notebook-card" style="cursor: pointer;">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 d-flex justify-content-between align-items-center mb-2">
+                                                <div class="text-primary fw-bolder large-text">Swift Notebook</div>
+                                                <i class="bi bi-arrow-right-circle text-primary" style="font-size: 1.5rem; transition: transform 0.2s ease;"></i>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="experience-description">
+                                                    <li>A collection of my LeetCode solutions and Swift syntax notes for coding interviews</li>
+                                                    <li>Documented solutions using Apple's DocC for technical documentation</li>
+                                                    <li>Created a quick reference guide for Swift-specific patterns used in algorithm problems</li>
+                                                    <li>Includes 19+ solved problems with complexity analysis and optimization approaches</li>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project Image -->
+                                            <div class="col-12 mt-3">
+                                                <img src="images/projects/swift_study.png" alt="Swift Notebook" class="img-fluid rounded-4" loading="lazy">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
                             <!-- Project Card 0 -->
-                            <div class="card shadow border-0 rounded-4 mb-5 reveal">
-                                <div class="card-body p-4">
-                                    <div class="row align-items-center">
-                                        <div class="text-primary fw-bolder mb-2 large-text">AI Computer Vision for Robotic Hand Data Collection</div>
-
-                                        <div class="col-12">
-                                            <div class="experience-description">
-                                                <li>Presented research findings at the UIUC Engineering Research Symposium (ISRS)</li>
-                                                <li>Research contributed to <a href="https://ap229997.github.io/projects/latentact/assets/paper.pdf" target="_blank">published work</a> at CVPR 2025 on object manipulation</li>                                                <li>Synthesized hand-object interaction under the guidance of Professor Saurabh Gupta, who specializes in computer vision, robotics, and machine learning.</li>
-                                                <li>Built a forearm GoPro mount to collect fine-grain hand manipulation</li>
-                                                <li>Modified a transformer-based model for 3D hand reconstruction</li>
-                                                <li>Crafted and conducted experiments to test and analyze poses, using linear regression for distance mappings</li>
-                                                <li>Integrated accelerometer and gyroscope (IMU) data to capture degrees of freedom</li>
-                                                <li>Segmented and removed hand from images to train robotic policies</li>
+                            <a href="https://www.youtube.com/watch?v=vOyYxAc_kvk" target="_blank" class="text-decoration-none" style="display: block;">
+                                <div class="card shadow border-0 rounded-4 mb-5 reveal youtube-card" style="cursor: pointer;">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 d-flex justify-content-between align-items-center mb-2">
+                                                <div class="text-primary fw-bolder large-text">AI Computer Vision for Robotic Hand Data Collection</div>
+                                                <i class="bi bi-play-circle text-primary" style="font-size: 1.5rem; transition: transform 0.2s ease;"></i>
                                             </div>
-                                        </div>
 
-                                        <!-- Clickable GIF Embed -->
-                                        <div class="col-12 mt-3">
-                                            <a href="https://www.youtube.com/watch?v=vOyYxAc_kvk" target="_blank">
+                                            <div class="col-12">
+                                                <div class="experience-description">
+                                                    <li>Presented research findings at the UIUC Engineering Research Symposium (ISRS)</li>
+                                                    <li>Research contributed to published work at CVPR 2025 on object manipulation</li>
+                                                    <li>Synthesized hand-object interaction under the guidance of Professor Saurabh Gupta, who specializes in computer vision, robotics, and machine learning.</li>
+                                                    <li>Built a forearm GoPro mount to collect fine-grain hand manipulation</li>
+                                                    <li>Modified a transformer-based model for 3D hand reconstruction</li>
+                                                    <li>Crafted and conducted experiments to test and analyze poses, using linear regression for distance mappings</li>
+                                                    <li>Integrated accelerometer and gyroscope (IMU) data to capture degrees of freedom</li>
+                                                    <li>Segmented and removed hand from images to train robotic policies</li>
+                                                </div>
+                                            </div>
+
+                                            <!-- Clickable GIF Embed -->
+                                            <div class="col-12 mt-3">
                                                 <img src="media/hand.gif" alt="AI Hand Research Demo" class="img-fluid rounded-4" loading="lazy">
-                                            </a>
-                                        </div>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
                             <!-- Project Card 1 -->
-                            <div class="card shadow border-0 rounded-4 mb-5 reveal">
-                                <div class="card-body p-4">
-                                    <div class="row align-items-center">
-                                        <div class="text-primary fw-bolder mb-2 large-text">Trading Paper Stock Web App</div>
+                            <a href="https://www.youtube.com/watch?v=NpH-P8EugfI" target="_blank" class="text-decoration-none" style="display: block;">
+                                <div class="card shadow border-0 rounded-4 mb-5 reveal youtube-card" style="cursor: pointer;">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 d-flex justify-content-between align-items-center mb-2">
+                                                <div class="text-primary fw-bolder large-text">Trading Paper Stock Web App</div>
+                                                <i class="bi bi-play-circle text-primary" style="font-size: 1.5rem; transition: transform 0.2s ease;"></i>
+                                            </div>
                             
-                                        <div class="col-12">
-                                            <div class="experience-description">
-                                                <li>Lead group project to build a stock trading app for investors to hone their skills</li>
-                                                <li>Built mySQL database and created synthetic dataset with Python scripting</li>
-                                                <li>Used a Flask back-end to connect database and get real time stock data with Yahoo Finance API</li>
-                                                <li>Hosted website and database on Google Cloud Platform</li>
-                                                <li>Users could: create portfolios, buy and sell stocks, research companies, and compare investing performance</li>
+                                            <div class="col-12">
+                                                <div class="experience-description">
+                                                    <li>Lead group project to build a stock trading app for investors to hone their skills</li>
+                                                    <li>Built mySQL database and created synthetic dataset with Python scripting</li>
+                                                    <li>Used a Flask back-end to connect database and get real time stock data with Yahoo Finance API</li>
+                                                    <li>Hosted website and database on Google Cloud Platform</li>
+                                                    <li>Users could: create portfolios, buy and sell stocks, research companies, and compare investing performance</li>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- Clickable GIF Embed -->
-                                        <div class="col-12 mt-3">
-                                            <a href="https://www.youtube.com/watch?v=NpH-P8EugfI" target="_blank">
+                                            <!-- Clickable GIF Embed -->
+                                            <div class="col-12 mt-3">
                                                 <img src="media/tradingpaper.gif" alt="Trading App Demo" class="img-fluid rounded-4" loading="lazy">
-                                            </a>
-                                        </div>
+                                            </div>
                                         
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
                             <!-- Project Card 1 -->
-                            <div class="card shadow border-0 rounded-4 mb-5 reveal">
-                                <div class="card-body p-4">
-                                    <div class="row align-items-center">
-                                        <div class="text-primary fw-bolder mb-2 large-text">Graffiti Spot iOS App</div>
-
-                                        <div class="col-12">
-                                            <div class="experience-description">
-                                                <li>Developed a SwiftUI iOS app to catalog graffiti at UIUC</li>
-                                                <li>Saved picture, name, and description for each work with SwiftData</li>
-                                                <li>Used MapKit to display art locations</li>
-                                                <li>Swipe through all works in gallery view</li>
+                            <a href="https://www.youtube.com/watch?v=p2PoGZtdjvk" target="_blank" class="text-decoration-none" style="display: block;">
+                                <div class="card shadow border-0 rounded-4 mb-5 reveal youtube-card" style="cursor: pointer;">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 d-flex justify-content-between align-items-center mb-2">
+                                                <div class="text-primary fw-bolder large-text">Graffiti Spot iOS App</div>
+                                                <i class="bi bi-play-circle text-primary" style="font-size: 1.5rem; transition: transform 0.2s ease;"></i>
                                             </div>
-                                        </div>
 
-                                        <!-- Clickable GIF Embed -->
-                                        <div class="col-12 mt-3">
-                                            <a href="https://www.youtube.com/watch?v=p2PoGZtdjvk" target="_blank">
+                                            <div class="col-12">
+                                                <div class="experience-description">
+                                                    <li>Developed a SwiftUI iOS app to catalog graffiti at UIUC</li>
+                                                    <li>Saved picture, name, and description for each work with SwiftData</li>
+                                                    <li>Used MapKit to display art locations</li>
+                                                    <li>Swipe through all works in gallery view</li>
+                                                </div>
+                                            </div>
+
+                                            <!-- Clickable GIF Embed -->
+                                            <div class="col-12 mt-3">
                                                 <img src="media/ghost.gif" alt="Graffiti Ghost iOS Demo" class="img-fluid rounded-4" loading="lazy">
-                                            </a>
-                                        </div>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
                             <!-- Project Card: McKinley Health Chatbot -->
                             <div class="card shadow border-0 rounded-4 mb-5 reveal">
@@ -143,9 +198,14 @@
                                         <div class="col-12">
                                             <div class="experience-description">
                                                 <li>Flask backend integrating FAISS and HuggingFace LLM for RAG-style responses</li>
-                                                <li>Web scraper + BeautifulSoup parsed 700+ pages from McKinley Health Center’s site</li>
+                                                <li>Web scraper + BeautifulSoup parsed 700+ pages from McKinley Health Center's site</li>
                                                 <li>Embedded text using SentenceTransformers and queried via semantic similarity</li>
                                             </div>
+                                        </div>
+
+                                        <!-- Project Image -->
+                                        <div class="col-12 mt-3">
+                                            <img src="images/projects/health_chatbot.png" alt="McKinley Health Chatbot" class="img-fluid rounded-4" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -163,6 +223,11 @@
                                                 <li>Data from XML based SOAP API, JSON based REST API, and web scraping with Beautiful Soup</li>
                                                 <li>Shared results weekly using automated email report pipeline created with Microsoft SharePoint and Power Automate</li>
                                             </div>
+                                        </div>
+
+                                        <!-- Project Image -->
+                                        <div class="col-12 mt-3">
+                                            <img src="images/projects/LJ_automated_report_cropped.png" alt="Automated Commodity Report" class="img-fluid rounded-4" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -194,11 +259,16 @@
 
                                         <div class="col-12">
                                             <div class="experience-description">
-                                                <li>Built interactive Svelte front-end for AFLEET Online’s Electric Vehicle (EV) calculator</li>
+                                                <li>Built interactive Svelte front-end for AFLEET Online's Electric Vehicle (EV) calculator</li>
                                                 <li>The back-end is called with the user's input parameters</li>
-                                                <li>Returned calculations are used in a table developed to match the Excel model’s layout</li>
+                                                <li>Returned calculations are used in a table developed to match the Excel model's layout</li>
                                                 <li>Built the page according to the US Web Design System standards</li>
                                             </div>
+                                        </div>
+
+                                        <!-- Project Image -->
+                                        <div class="col-12 mt-3">
+                                            <img src="images/projects/EV_charging_online.jpg" alt="EV Charging Web App" class="img-fluid rounded-4" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -218,6 +288,11 @@
                                                 <li>Notified the USURDB and correct rate information was published</li>
                                             </div>
                                         </div>
+
+                                        <!-- Project Image -->
+                                        <div class="col-12 mt-3">
+                                            <img src="images/projects/EV_database.jpg" alt="US Utility Rate Database" class="img-fluid rounded-4" loading="lazy">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -233,6 +308,11 @@
                                                 <li>Developed algorithm to calculate EV charging cost based on varying electricy demand and charger current draw</li>
                                                 <li>Users selected their local electrical rate, EV battery capacity, and charger for to compute their charging cost estimate</li>
                                                 <li>A data validation drop down was developed to build a dynamic range of electrical rates based on the state and type input</li>                                            </div>
+                                        </div>
+
+                                        <!-- Project Image -->
+                                        <div class="col-12 mt-3">
+                                            <img src="images/projects/EV_modeling.jpg" alt="Advanced Excel Modeling" class="img-fluid rounded-4" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
