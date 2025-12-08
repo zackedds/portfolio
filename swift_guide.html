@@ -88,12 +88,47 @@ let key = "apple"
 
 // The "Default Value" Subscript
 // Instead of checking if key exists, just ask for it with a default of 0.
-counts[key, default: 0] += 1</code></pre>
+counts[key, default: 0] += 1
+
+// Extracting Values
+let value = counts[key] ?? 0  // Returns nil if key doesn't exist
+let allValues = Array(counts.values)  // Get all values as array
+let allKeys = Array(counts.keys)      // Get all keys as array
+
+// Iterating
+for (key, value) in counts {
+    print("\(key): \(value)")
+}
+
+// Check if key exists
+if counts[key] != nil { /* key exists */ }</code></pre>
                                     </div>
 
-                                    <!-- Section 3: Arrays & Stacks -->
+                                    <!-- Section 3: Sets -->
                                     <div class="mb-5">
-                                        <h3 class="h4 fw-bolder text-primary mb-3">3. Arrays & Stacks</h3>
+                                        <h3 class="h4 fw-bolder text-primary mb-3">3. Sets</h3>
+                                        <p class="text-muted mb-3"><em>Why it matters: Essential for duplicate detection and unique element tracking. O(1) lookups make them perfect for membership tests.</em></p>
+                                        <pre class="bg-light p-3 rounded"><code>var seen = Set&lt;Int&gt;()
+
+// Add and Check (O(1))
+seen.insert(5)
+if seen.contains(5) { /* found */ }
+
+// Common Operations
+seen.remove(5)              // Remove element
+seen.isEmpty                // Check if empty
+seen.count                  // Get size
+
+// Set Operations
+let set1: Set&lt;Int&gt; = [1, 2, 3]
+let set2: Set&lt;Int&gt; = [3, 4, 5]
+let union = set1.union(set2)        // {1, 2, 3, 4, 5}
+let intersection = set1.intersection(set2)  // {3}</code></pre>
+                                    </div>
+
+                                    <!-- Section 4: Arrays & Stacks -->
+                                    <div class="mb-5">
+                                        <h3 class="h4 fw-bolder text-primary mb-3">4. Arrays & Stacks</h3>
                                         <p class="text-muted mb-3"><em>Why it matters: Swift Arrays define stack behavior (popLast/append). Be careful with removeFirst() as it is O(n).</em></p>
                                         <pre class="bg-light p-3 rounded"><code>var stack: [Int] = []
 
@@ -103,14 +138,22 @@ let top = stack.popLast() // Pop
 
 // O(n) Operations (Avoid inside loops!)
 stack.insert(10, at: 0)
-stack.removeFirst()</code></pre>
+stack.removeFirst()
+
+// Useful Array Operations
+let arr = [1, 2, 3, 4, 5]
+arr.first  // Optional first element
+arr.last   // Optional last element
+arr.isEmpty  // Check if empty
+arr.count    // Get length</code></pre>
                                     </div>
 
-                                    <!-- Section 4: Strings -->
+                                    <!-- Section 5: Strings -->
                                     <div class="mb-5">
-                                        <h3 class="h4 fw-bolder text-primary mb-3">4. Strings</h3>
+                                        <h3 class="h4 fw-bolder text-primary mb-3">5. Strings</h3>
                                         <p class="text-muted mb-3"><em>Why it matters: Swift Strings enforce Unicode correctness, so integer indexing (str[0]) is forbidden. You must convert to an Array for random access or use Substring methods.</em></p>
                                         <pre class="bg-light p-3 rounded"><code>let str = "Swift"
+let mixed = "Hello World 123"
 
 // 1. Efficient Slicing (Returns Substring)
 let start = str.prefix(3) // "Swi"
@@ -119,12 +162,26 @@ let end = str.suffix(2)   // "ft"
 // 2. Array Conversion (The LeetCode Standard)
 // Required for O(1) access patterns (like Two Pointers)
 let chars = Array(str)
-// now you can do: chars[0]</code></pre>
+// now you can do: chars[0]
+
+// 3. Case Conversion
+let lower = "Hello".lowercased()  // "hello"
+let upper = "Hello".uppercased()  // "HELLO"
+
+// 4. Common String Operations
+str.contains("ift")           // Check substring
+str.hasPrefix("Swi")          // Check prefix
+str.hasSuffix("ft")           // Check suffix
+str.replacingOccurrences(of: "i", with: "y")  // Replace
+
+// 5. Splitting
+let words = "a b c".split(separator: " ")  // ["a", "b", "c"]
+let chars2 = Array("abc")                   // ["a", "b", "c"]</code></pre>
                                     </div>
 
-                                    <!-- Section 5: Functional Shorthand -->
+                                    <!-- Section 6: Functional Shorthand -->
                                     <div class="mb-5">
-                                        <h3 class="h4 fw-bolder text-primary mb-3">5. Functional Shorthand</h3>
+                                        <h3 class="h4 fw-bolder text-primary mb-3">6. Functional Shorthand</h3>
                                         <p class="text-muted mb-3"><em>Why it matters: Shows language mastery and keeps code clean during interviews.</em></p>
                                         <pre class="bg-light p-3 rounded"><code>let nums = [1, 2, 3, 4, 5]
 
@@ -136,9 +193,53 @@ let evens = nums.filter { $0 % 2 == 0 }
 
 // Reduce: Aggregate
 let sum = nums.reduce(0, +)
+let product = nums.reduce(1, *)
 
 // Sort: Custom Logic (Descending)
-let sorted = nums.sorted { $0 > $1 }</code></pre>
+let sorted = nums.sorted { $0 > $1 }
+
+// Chaining
+let result = nums.filter { $0 % 2 == 0 }.map { $0 * 2 }.reduce(0, +)</code></pre>
+                                    </div>
+
+                                    <!-- Section 7: Ranges & Indexing -->
+                                    <div class="mb-5">
+                                        <h3 class="h4 fw-bolder text-primary mb-3">7. Ranges & Indexing</h3>
+                                        <p class="text-muted mb-3"><em>Why it matters: Useful for array slicing and creating index ranges for loops. Swift's range syntax is concise and readable.</em></p>
+                                        <pre class="bg-light p-3 rounded"><code>let arr = [1, 2, 3, 4, 5]
+
+// Array Slicing
+let slice1 = arr[0..&lt;3]        // [1, 2, 3] (exclusive end)
+let slice2 = arr[0...2]         // [1, 2, 3] (inclusive end)
+let slice3 = arr[2...]          // [3, 4, 5] (from index to end)
+
+// Ranges for Loops
+for i in 0..&lt;arr.count { }
+for i in stride(from: 0, to: 10, by: 2) { }  // 0, 2, 4, 6, 8
+for i in stride(from: 10, through: 0, by: -1) { }  // Reverse</code></pre>
+                                    </div>
+
+                                    <!-- Section 8: Character & ASCII -->
+                                    <div class="mb-5">
+                                        <h3 class="h4 fw-bolder text-primary mb-3">8. Character & ASCII Operations</h3>
+                                        <p class="text-muted mb-3"><em>Why it matters: Many string problems require character-to-ASCII conversion or vice versa. Essential for anagram and frequency problems.</em></p>
+                                        <pre class="bg-light p-3 rounded"><code>let char: Character = "a"
+
+// Character to ASCII
+let asciiValue = char.asciiValue!  // 97 for 'a'
+let asciiA = Character("a").asciiValue!
+
+// ASCII to Character
+let charFromAscii = Character(UnicodeScalar(97)!)  // "a"
+
+// Common Patterns
+let offset = Character("a").asciiValue!  // Use as base
+let index = Character("c").asciiValue! - offset  // 2
+
+// Character Properties
+char.isLetter    // Check if letter
+char.isNumber    // Check if digit
+char.isLowercase // Check case</code></pre>
                                     </div>
                                 </div>
                             </div>
