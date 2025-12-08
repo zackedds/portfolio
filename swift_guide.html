@@ -98,10 +98,7 @@ let allKeys = Array(counts.keys)      // Get all keys as array
 // Iterating
 for (key, value) in counts {
     print("\(key): \(value)")
-}
-
-// Check if key exists
-if counts[key] != nil { /* key exists */ }</code></pre>
+}</code></pre>
                                     </div>
 
                                     <!-- Section 3: Sets -->
@@ -119,11 +116,8 @@ seen.remove(5)              // Remove element
 seen.isEmpty                // Check if empty
 seen.count                  // Get size
 
-// Set Operations
-let set1: Set&lt;Int&gt; = [1, 2, 3]
-let set2: Set&lt;Int&gt; = [3, 4, 5]
-let union = set1.union(set2)        // {1, 2, 3, 4, 5}
-let intersection = set1.intersection(set2)  // {3}</code></pre>
+// Initialize Set with Values
+let set1: Set&lt;Int&gt; = [1, 2, 3]</code></pre>
                                     </div>
 
                                     <!-- Section 4: Arrays & Stacks -->
@@ -175,8 +169,12 @@ str.hasSuffix("ft")           // Check suffix
 str.replacingOccurrences(of: "i", with: "y")  // Replace
 
 // 5. Splitting
-let words = "a b c".split(separator: " ")  // ["a", "b", "c"]
-let chars2 = Array("abc")                   // ["a", "b", "c"]</code></pre>
+let words = "a b c".components(separatedBy: " ")  // ["a", "b", "c"]
+let chars2 = Array("abc")                         // ["a", "b", "c"]
+
+// 6. Filtering Strings
+let str = "Hello123!@#"
+let alphanumeric = str.filter { $0.isLetter || $0.isNumber }</code></pre>
                                     </div>
 
                                     <!-- Section 6: Functional Shorthand -->
@@ -196,10 +194,7 @@ let sum = nums.reduce(0, +)
 let product = nums.reduce(1, *)
 
 // Sort: Custom Logic (Descending)
-let sorted = nums.sorted { $0 > $1 }
-
-// Chaining
-let result = nums.filter { $0 % 2 == 0 }.map { $0 * 2 }.reduce(0, +)</code></pre>
+let sorted = nums.sorted { $0 > $1 }</code></pre>
                                     </div>
 
                                     <!-- Section 7: Ranges & Indexing -->
@@ -219,28 +214,6 @@ for i in stride(from: 0, to: 10, by: 2) { }  // 0, 2, 4, 6, 8
 for i in stride(from: 10, through: 0, by: -1) { }  // Reverse</code></pre>
                                     </div>
 
-                                    <!-- Section 8: Character & ASCII -->
-                                    <div class="mb-5">
-                                        <h3 class="h4 fw-bolder text-primary mb-3">8. Character & ASCII Operations</h3>
-                                        <p class="text-muted mb-3"><em>Why it matters: Many string problems require character-to-ASCII conversion or vice versa. Essential for anagram and frequency problems.</em></p>
-                                        <pre class="bg-light p-3 rounded"><code>let char: Character = "a"
-
-// Character to ASCII
-let asciiValue = char.asciiValue!  // 97 for 'a'
-let asciiA = Character("a").asciiValue!
-
-// ASCII to Character
-let charFromAscii = Character(UnicodeScalar(97)!)  // "a"
-
-// Common Patterns
-let offset = Character("a").asciiValue!  // Use as base
-let index = Character("c").asciiValue! - offset  // 2
-
-// Character Properties
-char.isLetter    // Check if letter
-char.isNumber    // Check if digit
-char.isLowercase // Check case</code></pre>
-                                    </div>
                                 </div>
                             </div>
                         </div>
