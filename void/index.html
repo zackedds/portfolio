@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VOID — Orbital Simulator (Rust/Wasm)</title>
+    <style>
+        html, body, canvas {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            background: #000;
+            z-index: 0;
+        }
+        body { cursor: crosshair; }
+    </style>
+</head>
+<body>
+    <canvas id="glcanvas" tabindex="1"></canvas>
+    <script src="mq_js_bundle.js"></script>
+    <script>load("void-sim-wasm.wasm");</script>
+    <script>
+        // Pinch-to-zoom: browser trackpad pinch sends ctrlKey+wheel events.
+        // macroquad ignores ctrlKey on wheel events, so we intercept and
+        // dispatch synthetic Ctrl key events to the canvas where macroquad listens.
+        (function() {
+            var pinchActive = false;
+            var pinchTimer = null;
+            var canvas = document.getElementById("glcanvas");
+
+            window.addEventListener("wheel", function(e) {
+                if (e.ctrlKey) {
+                    e.preventDefault();
+                    if (!pinchActive) {
+                        pinchActive = true;
+                        canvas.dispatchEvent(new KeyboardEvent("keydown", {
+                            key: "Control", code: "ControlLeft", keyCode: 17,
+                            ctrlKey: true, bubbles: false
+                        }));
+                    }
+                    clearTimeout(pinchTimer);
+                    pinchTimer = setTimeout(function() {
+                        pinchActive = false;
+                        canvas.dispatchEvent(new KeyboardEvent("keyup", {
+                            key: "Control", code: "ControlLeft", keyCode: 17,
+                            ctrlKey: false, bubbles: false
+                        }));
+                    }, 150);
+                }
+            }, { passive: false });
+        })();
+    </script>
+</body>
+</html>
