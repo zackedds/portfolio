@@ -365,7 +365,7 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                             <li class="mb-1"><strong>100% format compliance</strong>, <strong>98.5% consistency</strong></li>
                                             <li class="mb-1">Runs entirely on a MacBook (~1.2GB quantized model + 11MB LoRA adapter)</li>
                                             <li class="mb-1">Generates responses in 2-5 seconds</li>
-                                            <li class="mb-1">Trained in 26 minutes with $0 in compute costs</li>
+                                            <li class="mb-1">Trained in 28 minutes with $0 in compute costs</li>
                                         </ul>
                                         <p class="text-muted mb-3">A few of the remaining failures are false negatives from eval strictness (correct commands that fail in the sandbox due to missing tools), not actual model errors. Safety is handled at the application layer with a command blacklist and approval workflow rather than in the model weights.</p>
                                         <img src="images/terminal-agent/chart_progression.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Training progression chart showing accuracy improvements over iterations" />
@@ -375,7 +375,7 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                     <div class="mb-5">
                                         <h3 class="h4 fw-bolder text-primary mb-3 mt-5">Using It For Real</h3>
                                         <img src="images/terminal-agent/demo_screenshot.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Screenshot of the terminal assistant in use" />
-                                        <p class="text-muted mb-3">It handles the everyday stuff well: file searches, git commands, disk usage, text processing, piping output between tools. Occasionally it'll pick a slightly wrong flag or miss a nuance, but the approval prompt catches those. For a 2B model running at 33 tokens/sec entirely on a laptop with no internet connection required, it's genuinely useful.</p>
+                                        <p class="text-muted mb-3">It handles the everyday stuff well: file searches, git commands, disk usage, text processing, piping output between tools. Occasionally it'll pick a slightly wrong flag or miss a nuance, but the approval prompt catches those. For a 2B model running at ~60 tokens/sec (slightly less with the LoRA adapter loaded) entirely on a laptop with no internet connection required, it's genuinely useful.</p>
                                     </div>
 
                                     <!-- Section: Task Interference -->
