@@ -375,30 +375,6 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                     <div class="mb-5">
                                         <h3 class="h4 fw-bolder text-primary mb-3 mt-5">Using It For Real</h3>
                                         <img src="images/terminal-agent/demo_screenshot.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Screenshot of the terminal assistant in use" />
-                                        <p class="text-muted mb-3">Eval numbers are one thing. Actually using it is another. Here's what a real session looks like:</p>
-                                        <pre class="bg-light p-3 rounded"><code>&gt; how many lines of code are in each python file
-  $ find . -name "*.py" | xargs wc -l
-   11 ./tests/test_utils.py
-    7 ./tests/test_api.py
-   34 ./src/utils.py
-   30 ./src/api.py
-   14 ./src/main.py
-   96 total
-
-&gt; find all files that contain the word flask
-  $ grep -rl "flask" . --include="*"
-  ./requirements.txt
-
-&gt; show disk usage by directory sorted biggest first
-  $ du -sh */ | sort -rh
-  20K   src/
-  12K   tests/
-  12K   scripts/
-  8.0K  docs/
-  8.0K  config/
-
-&gt; create a file called notes.txt with the text hello world
-  $ echo "hello world" &gt; notes.txt</code></pre>
                                         <p class="text-muted mb-3">It handles the everyday stuff well: file searches, git commands, disk usage, text processing, piping output between tools. Occasionally it'll pick a slightly wrong flag or miss a nuance, but the approval prompt catches those. For a 2B model running at 33 tokens/sec entirely on a laptop with no internet connection required, it's genuinely useful.</p>
                                     </div>
 
