@@ -17,6 +17,40 @@
         <!-- Core theme CSS (Bootstrap CDN) + Custom overrides -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
+        <style>
+            /* Spinner animation from the CLI tool */
+            @keyframes spin-dots {
+                0% { content: "⠋"; }
+                10% { content: "⠙"; }
+                20% { content: "⠹"; }
+                30% { content: "⠸"; }
+                40% { content: "⠼"; }
+                50% { content: "⠴"; }
+                60% { content: "⠦"; }
+                70% { content: "⠧"; }
+                80% { content: "⠇"; }
+                90% { content: "⠏"; }
+            }
+            .cli-spinner::before {
+                content: "⠋";
+                animation: spin-dots 0.8s steps(1) infinite;
+                color: #58a6ff;
+            }
+            .terminal-banner {
+                background: #0d1117;
+                border-radius: 12px;
+                padding: 1rem 1.5rem;
+                font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+                font-size: 0.85rem;
+                line-height: 1.8;
+            }
+            .terminal-banner .prompt { color: #7ee787; }
+            .terminal-banner .cmd { color: #79c0ff; }
+            .terminal-banner .output { color: #8b949e; }
+            .terminal-banner .spinner-text { color: #8b949e; }
+            .terminal-banner .title { color: #58a6ff; font-weight: bold; }
+            .terminal-banner .meta { color: #8b949e; }
+        </style>
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
@@ -69,13 +103,24 @@
                                         <span class="badge bg-light text-dark me-1">Metal GPU</span>
                                     </div>
 
+                                    <!-- Terminal Banner -->
+                                    <div class="terminal-banner mb-4">
+                                        <div><span class="title">&gt; terminal-agent</span></div>
+                                        <div><span class="meta">Qwen 3.5 2B + LoRA | local | auto</span></div>
+                                        <div class="mt-2"><span class="prompt">&gt; </span><span class="output">find all files with TODO comments</span></div>
+                                        <div><span class="cli-spinner"></span> <span class="spinner-text">thinking...</span></div>
+                                        <div><span class="cmd">$ grep -rn "TODO" . --include="*.py"</span></div>
+                                        <div><span class="output">./src/utils.py:22: &nbsp;# TODO: implement proper sanitization</span></div>
+                                        <div><span class="output">./src/api.py:27: &nbsp;&nbsp;# TODO: implement database query</span></div>
+                                    </div>
+
                                     <!-- Demo GIF -->
                                     <div class="mb-4">
                                         <img src="images/terminal-agent/demo.gif" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Demo of the terminal assistant in action" />
                                     </div>
 
                                     <!-- TL;DR -->
-                                    <p class="text-muted mb-3"><strong>TL;DR:</strong> Fine-tuned a 2B parameter model to be a terminal assistant using QLoRA on a MacBook. 60% to 89% accuracy on bash command generation. Discovered a macOS GPU bug along the way and got an undocumented fix from the MLX team. Everything runs locally, trained in 28 minutes, $0 compute cost. <a href="https://github.com/zackedds/terminal-agent" class="text-primary" target="_blank"><strong>GitHub Repo</strong></a></p>
+                                    <p class="text-muted mb-3"><strong>TL;DR:</strong> Fine-tuned a 2B parameter model to be a terminal assistant using QLoRA on a MacBook. 60% to 89% accuracy on bash command generation. Discovered a macOS GPU bug along the way and got an undocumented fix from the MLX team. Everything runs locally, trained in 28 minutes, $0 compute cost. <a href="https://github.com/zackedds/terminal-agent" class="btn btn-sm btn-dark rounded-pill px-3 py-1 ms-2" target="_blank"><i class="bi bi-github me-1"></i>View on GitHub</a></p>
 
                                     <hr class="my-4">
 
@@ -363,9 +408,9 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                         <p class="text-muted mb-3">LoRA works by constraining all learned behavior into a low-rank subspace (in our case, 8 dimensions). Command examples push the adapter in one direction: "when the user asks something, generate a tool call." Safety examples push in the opposite direction: "when the user asks something dangerous, do NOT generate a tool call." In an 8-dimensional space, these opposing forces cancel each other out. The adapter doesn't have enough room to represent both "do the thing" and "don't do the thing" simultaneously.</p>
                                         <p class="text-muted mb-3"><strong>Three recent papers confirm this:</strong></p>
                                         <ul class="text-muted mb-3">
-                                            <li class="mb-1"><a href="https://arxiv.org/abs/2601.09684" class="text-primary" target="_blank">Disentangling Task Conflicts in Multi-Task LoRA</a> found that LoRA's low-rank constraint causes "destructive interference" between conflicting task gradients</li>
-                                            <li class="mb-1"><a href="https://arxiv.org/abs/2504.07448" class="text-primary" target="_blank">LoRI</a> showed that LoRA "projects features into the same dense low-dimensional space, leading to task interference"</li>
-                                            <li class="mb-1"><a href="https://arxiv.org/abs/2410.09437" class="text-primary" target="_blank">MTL-LoRA</a> proposed task-specific LoRA branches precisely because a single shared low-rank space can't separate contradictory objectives</li>
+                                            <li class="mb-2"><a href="https://arxiv.org/abs/2601.09684" class="text-decoration-none" target="_blank"><span class="badge bg-danger bg-opacity-10 text-danger me-1" style="font-size: 0.7rem;">arXiv</span><span class="text-primary">Disentangling Task Conflicts in Multi-Task LoRA</span></a> <span class="text-muted">found that LoRA's low-rank constraint causes "destructive interference" between conflicting task gradients</span></li>
+                                            <li class="mb-2"><a href="https://arxiv.org/abs/2504.07448" class="text-decoration-none" target="_blank"><span class="badge bg-danger bg-opacity-10 text-danger me-1" style="font-size: 0.7rem;">arXiv</span><span class="text-primary">LoRI</span></a> <span class="text-muted">showed that LoRA "projects features into the same dense low-dimensional space, leading to task interference"</span></li>
+                                            <li class="mb-2"><a href="https://arxiv.org/abs/2410.09437" class="text-decoration-none" target="_blank"><span class="badge bg-danger bg-opacity-10 text-danger me-1" style="font-size: 0.7rem;">arXiv</span><span class="text-primary">MTL-LoRA</span></a> <span class="text-muted">proposed task-specific LoRA branches precisely because a single shared low-rank space can't separate contradictory objectives</span></li>
                                         </ul>
                                         <p class="text-muted mb-3">The fix was counterintuitive: <strong>remove all safety examples from LoRA training entirely</strong>. Only train the adapter on what we want it to learn: generating correct bash commands. Safety moves to the application layer instead, with a CLI that blocks dangerous commands like <code>rm -rf /</code> and requires explicit approval for anything risky like <code>sudo</code> or <code>git push</code>. Teaching restraint isn't the adapter's job; that's better handled by the base weights via DPO or RLHF in a future iteration.</p>
                                         <p class="text-muted mb-3">My initial assumption was that the adapter was full, that we'd hit its capacity limit. Turns out a rank-8 adapter on this model can handle approximately <strong>40,000 examples</strong> before saturating. We're using <strong>2,072, about 5% capacity</strong>. The bottleneck was never data volume. It was <strong>data coherence</strong>.</p>
@@ -408,7 +453,10 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
 
                                     <hr class="my-4">
 
-                                    <p class="text-muted mb-3"><em>All code, eval infrastructure, training configs, and the CLI tool are on <a href="https://github.com/zackedds/terminal-agent" class="text-primary" target="_blank">GitHub</a>. The MLX GPU bug is tracked at <a href="https://github.com/ml-explore/mlx/issues/3267" class="text-primary" target="_blank">ml-explore/mlx#3267</a>.</em></p>
+                                    <div class="d-flex gap-2 flex-wrap mt-4">
+                                        <a href="https://github.com/zackedds/terminal-agent" class="btn btn-dark rounded-pill px-4 py-2" target="_blank"><i class="bi bi-github me-2"></i>View Source on GitHub</a>
+                                        <a href="https://github.com/ml-explore/mlx/issues/3267" class="btn btn-outline-secondary rounded-pill px-4 py-2" target="_blank"><i class="bi bi-bug me-2"></i>MLX GPU Bug #3267</a>
+                                    </div>
 
                                 </div>
                             </div>
