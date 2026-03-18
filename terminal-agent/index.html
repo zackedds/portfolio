@@ -7,7 +7,7 @@
         <meta name="author" content="Zack Edds" />
         <title>Terminal Assistant – Zack Edds</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (Bootstrap CDN) + Custom overrides -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/custom.css" rel="stylesheet" />
+        <link href="../css/custom.css" rel="stylesheet" />
         <style>
             /* Prevent horizontal scroll */
             html, body { overflow-x: hidden; }
@@ -70,13 +70,13 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Zack Edds</span></a>
+                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Zack Edds</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
             <header class="py-5">
                 <div class="container px-5">
                     <div class="mb-4 text-center">
-                        <a href="projects.html" class="text-muted text-decoration-none mb-3 d-inline-block">
+                        <a href="../projects.html" class="text-muted text-decoration-none mb-3 d-inline-block">
                             <i class="bi bi-arrow-left me-2"></i>Back to Projects
                         </a>
                         <h1 class="display-3 fw-bolder mb-3"><span class="text-gradient d-inline">Fine-Tuning a 2B Terminal Assistant on Apple Silicon</span></h1>
@@ -118,7 +118,7 @@
 
                                     <!-- Demo GIF -->
                                     <div class="mb-4">
-                                        <img src="images/terminal-agent/demo.gif" class="img-fluid rounded-4" loading="lazy" alt="Demo of the terminal assistant in action" />
+                                        <img src="../images/terminal-agent/demo.gif" class="img-fluid rounded-4" loading="lazy" alt="Demo of the terminal assistant in action" />
                                     </div>
 
                                     <!-- TL;DR -->
@@ -255,7 +255,7 @@
                                             </tbody>
                                         </table></div>
                                         <p class="text-muted mb-3">The fine-tuned 2B beat the 4B base model on execution success, format compliance, and consistency. An 11MB LoRA adapter closed a 26-point gap and made a 2B model competitive with one twice its size.</p>
-                                        <img src="images/terminal-agent/chart_all_metrics.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="All metrics comparison chart" />
+                                        <img src="../images/terminal-agent/chart_all_metrics.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="All metrics comparison chart" />
                                     </div>
 
                                     <!-- Section: The GPU Bug -->
@@ -326,7 +326,7 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                         <h4 class="fw-bolder mb-3 mt-4">Filing the Bug</h4>
                                         <p class="text-muted mb-3">I opened an issue on <a href="https://github.com/ml-explore/mlx/issues/3267" class="text-primary" target="_blank">ml-explore/mlx (#3267)</a> with the 5 controlled runs, the <code>caffeinate</code> workaround, and the minimal reproduction showing the sequence-length threshold.</p>
                                         <p class="text-muted mb-3">It turned out this was related to a <a href="https://github.com/ml-explore/mlx/issues/1231" class="text-primary" target="_blank">long-standing issue (#1231)</a> that had been open since June 2024, originally filed by one of the MLX co-creators. That issue had been opened, closed, reopened, and referenced across multiple bug reports over two years without a clear resolution. The MLX team ended up closing the original in favor of mine, since the controlled experiments and workaround provided the missing detail.</p>
-                                        <img src="images/terminal-agent/closing_github_issue.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="GitHub issue showing the bug being closed" />
+                                        <img src="../images/terminal-agent/closing_github_issue.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="GitHub issue showing the bug being closed" />
 
                                         <h4 class="fw-bolder mb-3 mt-4">The Fix</h4>
                                         <p class="text-muted mb-3">An MLX collaborator replied with a single environment variable:</p>
@@ -353,7 +353,7 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                             <li class="mb-1"><strong>Double the training data</strong> to 2,177 unique examples</li>
                                         </ul>
                                         <p class="text-muted mb-3">With the larger dataset, the model trained for 2000 iterations while maintaining a healthy train loss of 0.439, confirming it was learning generalizable patterns rather than memorizing.</p>
-                                        <img src="images/terminal-agent/chart_val_loss.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Training curve showing validation loss over iterations" />
+                                        <img src="../images/terminal-agent/chart_val_loss.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Training curve showing validation loss over iterations" />
                                     </div>
 
                                     <!-- Section: Where Things Stand -->
@@ -368,13 +368,13 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                             <li class="mb-1">Trained in 28 minutes with $0 in compute costs</li>
                                         </ul>
                                         <p class="text-muted mb-3">A few of the remaining failures are false negatives from eval strictness (correct commands that fail in the sandbox due to missing tools), not actual model errors. Safety is handled at the application layer with a command blacklist and approval workflow rather than in the model weights.</p>
-                                        <img src="images/terminal-agent/chart_progression.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Training progression chart showing accuracy improvements over iterations" />
+                                        <img src="../images/terminal-agent/chart_progression.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Training progression chart showing accuracy improvements over iterations" />
                                     </div>
 
                                     <!-- Section: Using It For Real -->
                                     <div class="mb-5">
                                         <h3 class="h4 fw-bolder text-primary mb-3 mt-5">Using It For Real</h3>
-                                        <img src="images/terminal-agent/demo_screenshot.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Screenshot of the terminal assistant in use" />
+                                        <img src="../images/terminal-agent/demo_screenshot.png" class="img-fluid rounded-4 mb-3" loading="lazy" alt="Screenshot of the terminal assistant in use" />
                                         <p class="text-muted mb-3">It handles the everyday stuff well: file searches, git commands, disk usage, text processing, piping output between tools. Occasionally it'll pick a slightly wrong flag or miss a nuance, but the approval prompt catches those. For a 2B model running at ~60 tokens/sec (slightly less with the LoRA adapter loaded) entirely on a laptop with no internet connection required, it's genuinely useful.</p>
                                     </div>
 
@@ -455,6 +455,6 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
     </body>
 </html>
