@@ -85,7 +85,7 @@
             <!-- Hero Section-->
             <header class="py-5">
                 <div class="container px-5">
-                    <div class="mb-4">
+                    <div class="mb-4 text-center">
                         <a href="projects.html" class="text-muted text-decoration-none mb-3 d-inline-block">
                             <i class="bi bi-arrow-left me-2"></i>Back to Projects
                         </a>
@@ -281,7 +281,7 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
                                         <h4 class="fw-bolder mb-3 mt-4">Wait, What Does the Error Actually Say?</h4>
                                         <p class="text-muted mb-3">The error didn't say "timeout." It didn't say "out of memory." It said <strong>"Impacting Interactivity."</strong> That's a specific term. It means: "your GPU work is blocking the UI compositor."</p>
                                         <p class="text-muted mb-3">Apple Silicon has a <strong>unified GPU</strong>. The same hardware that runs your ML training also composites every window on your screen. macOS has a watchdog that kills GPU tasks if they block the display pipeline for too long. macOS Tahoe's updated UI adds some additional GPU compositing work for WindowServer, which tightens the margin for compute workloads on the shared GPU.</p>
-                                        <p class="text-muted mb-3">My hypothesis: if there's no display to composite, the watchdog has nothing to protect.</p>
+                                        <p class="text-muted mb-3"><span class="cli-spinner me-2"></span>My hypothesis: if there's no display to composite, the watchdog has nothing to protect.</p>
 
                                         <h4 class="fw-bolder mb-3 mt-4">The Experiment: Display On vs. Display Off</h4>
                                         <p class="text-muted mb-3">Three controlled runs, same model, same config. Display off = close the laptop lid with <code>caffeinate -s</code> to keep the system awake:</p>
@@ -449,7 +449,7 @@ export MLX_MAX_MB_PER_BUFFER=10    # Still crashed</code></pre>
 
                                     <!-- Section: What's Next -->
                                     <div class="mb-5">
-                                        <h3 class="h4 fw-bolder text-primary mb-3 mt-5">What's Next</h3>
+                                        <h3 class="h4 fw-bolder text-primary mb-3 mt-5"><span class="cli-spinner me-2"></span>What's Next</h3>
                                         <p class="text-muted mb-3">DPO (Direct Preference Optimization) for safety, so the model learns to refuse dangerous commands from preference pairs rather than conflicting SFT examples. And multi-turn agent capabilities, where the model can run a command, see the output, and decide what to do next. But those are future iterations.</p>
                                     </div>
 
