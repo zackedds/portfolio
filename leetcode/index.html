@@ -17,6 +17,10 @@
         <!-- Core theme CSS (Bootstrap CDN) + Custom overrides -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/custom.css" rel="stylesheet" />
+        <style>
+            .table-hover tbody tr { position: relative; cursor: pointer; }
+            .table-hover tbody tr .stretched-link::after { position: absolute; inset: 0; z-index: 1; content: ""; }
+        </style>
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
@@ -81,115 +85,115 @@
                                     <tbody>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/twosum" class="text-primary fw-bolder text-decoration-none">Two Sum</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/twosum" class="text-primary fw-bolder text-decoration-none stretched-link">Two Sum</a></td>
                                             <td>Arrays & Hashing</td>
                                             <td>Dictionary lookup for O(1)</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/addtwonumbers" class="text-primary fw-bolder text-decoration-none">Add Two Numbers</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/addtwonumbers" class="text-primary fw-bolder text-decoration-none stretched-link">Add Two Numbers</a></td>
                                             <td>Linked Lists</td>
                                             <td>Carry logic & Traversal</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/longestsubstringwithoutrepeatingcharacters" class="text-primary fw-bolder text-decoration-none">Longest Substring Without Repeating Characters</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/longestsubstringwithoutrepeatingcharacters" class="text-primary fw-bolder text-decoration-none stretched-link">Longest Substring Without Repeating Characters</a></td>
                                             <td>Sliding Window</td>
                                             <td>Set & Pointer manipulation</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/reverseinteger" class="text-primary fw-bolder text-decoration-none">Reverse Integer</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/reverseinteger" class="text-primary fw-bolder text-decoration-none stretched-link">Reverse Integer</a></td>
                                             <td>Math</td>
                                             <td>Modulo arithmetic & Overflow safety</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/containerwithmostwater" class="text-primary fw-bolder text-decoration-none">Container With Most Water</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/containerwithmostwater" class="text-primary fw-bolder text-decoration-none stretched-link">Container With Most Water</a></td>
                                             <td>Two Pointers</td>
                                             <td>Greedy approach</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/lettercombinationsofaphonenumber" class="text-primary fw-bolder text-decoration-none">Letter Combinations of a Phone Number</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/lettercombinationsofaphonenumber" class="text-primary fw-bolder text-decoration-none stretched-link">Letter Combinations of a Phone Number</a></td>
                                             <td>Backtracking</td>
                                             <td>DFS & String building</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/validparentheses" class="text-primary fw-bolder text-decoration-none">Valid Parentheses</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/validparentheses" class="text-primary fw-bolder text-decoration-none stretched-link">Valid Parentheses</a></td>
                                             <td>Stack</td>
                                             <td>Matching pairs & Stack operations</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/mergetwosortedlists" class="text-primary fw-bolder text-decoration-none">Merge Two Sorted Lists</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/mergetwosortedlists" class="text-primary fw-bolder text-decoration-none stretched-link">Merge Two Sorted Lists</a></td>
                                             <td>Linked Lists</td>
                                             <td>Two pointers & Merge logic</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/groupanagrams" class="text-primary fw-bolder text-decoration-none">Group Anagrams</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/groupanagrams" class="text-primary fw-bolder text-decoration-none stretched-link">Group Anagrams</a></td>
                                             <td>Arrays & Hashing</td>
                                             <td>String sorting as key</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/mergeintervals" class="text-primary fw-bolder text-decoration-none">Merge Intervals</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/mergeintervals" class="text-primary fw-bolder text-decoration-none stretched-link">Merge Intervals</a></td>
                                             <td>Intervals</td>
                                             <td>Sorting & Overlap detection</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/plusone" class="text-primary fw-bolder text-decoration-none">Plus One</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/plusone" class="text-primary fw-bolder text-decoration-none stretched-link">Plus One</a></td>
                                             <td>Arrays</td>
                                             <td>Carry propagation</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/maximumdepthofbinarytree" class="text-primary fw-bolder text-decoration-none">Maximum Depth of Binary Tree</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/maximumdepthofbinarytree" class="text-primary fw-bolder text-decoration-none stretched-link">Maximum Depth of Binary Tree</a></td>
                                             <td>Tree</td>
                                             <td>DFS recursion</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/besttimetobuyandsellstock" class="text-primary fw-bolder text-decoration-none">Best Time to Buy and Sell Stock</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/besttimetobuyandsellstock" class="text-primary fw-bolder text-decoration-none stretched-link">Best Time to Buy and Sell Stock</a></td>
                                             <td>Arrays</td>
                                             <td>Track min & max profit</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/validpalindrome" class="text-primary fw-bolder text-decoration-none">Valid Palindrome</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/validpalindrome" class="text-primary fw-bolder text-decoration-none stretched-link">Valid Palindrome</a></td>
                                             <td>Two Pointers</td>
                                             <td>Character validation & Pointers</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/minstack" class="text-primary fw-bolder text-decoration-none">Min Stack</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/minstack" class="text-primary fw-bolder text-decoration-none stretched-link">Min Stack</a></td>
                                             <td>Stack</td>
                                             <td>O(1) min tracking</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-warning text-dark">Medium</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/binarytreerightsideview" class="text-primary fw-bolder text-decoration-none">Binary Tree Right Side View</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/binarytreerightsideview" class="text-primary fw-bolder text-decoration-none stretched-link">Binary Tree Right Side View</a></td>
                                             <td>Tree</td>
                                             <td>BFS level traversal</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/containsduplicate" class="text-primary fw-bolder text-decoration-none">Contains Duplicate</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/containsduplicate" class="text-primary fw-bolder text-decoration-none stretched-link">Contains Duplicate</a></td>
                                             <td>Arrays & Hashing</td>
                                             <td>Set lookup</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/invertbinarytree" class="text-primary fw-bolder text-decoration-none">Invert Binary Tree</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/invertbinarytree" class="text-primary fw-bolder text-decoration-none stretched-link">Invert Binary Tree</a></td>
                                             <td>Tree</td>
                                             <td>Post-order swap</td>
                                         </tr>
                                         <tr>
                                             <td><span class="badge bg-success">Easy</span></td>
-                                            <td><a href="/swift-study/documentation/leetcodedocs/diameterofbinarytree" class="text-primary fw-bolder text-decoration-none">Diameter of Binary Tree</a></td>
+                                            <td><a href="/swift-study/documentation/leetcodedocs/diameterofbinarytree" class="text-primary fw-bolder text-decoration-none stretched-link">Diameter of Binary Tree</a></td>
                                             <td>Tree</td>
                                             <td>DFS & Path length tracking</td>
                                         </tr>
