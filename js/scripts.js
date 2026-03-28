@@ -8,7 +8,11 @@
   if (typeof window === 'undefined') return;
 
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return; // respect reduced motion
+  if (prefersReduced) {
+    // Show everything immediately — no animation, but don't leave content hidden
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('revealed'); });
+    return;
+  }
 
   var revealEls = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) || revealEls.length === 0) {
@@ -29,7 +33,6 @@
   revealEls.forEach(function(el) { observer.observe(el); });
 
   // Safety: ensure near-fold items don't look like the page ends
-  // After a short delay, pre-reveal items that are within 1 viewport height below
   window.setTimeout(function() {
     revealEls.forEach(function(el) {
       if (!el.classList.contains('revealed')) {
@@ -41,6 +44,13 @@
       }
     });
   }, 400);
+
+  // Hard safety net: if anything is still hidden after 2s, force reveal
+  window.setTimeout(function() {
+    document.querySelectorAll('.reveal:not(.revealed)').forEach(function(el) {
+      el.classList.add('revealed');
+    });
+  }, 2000);
 })();
 
 // Enable Bootstrap carousel autoplay with pause on hover and reduced-motion support
